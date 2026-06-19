@@ -1,0 +1,60 @@
+CREATE DATABASE tourism;
+USE tourism;
+
+-- Страны
+CREATE TABLE Countries (
+    country_id INT PRIMARY KEY AUTO_INCREMENT,
+    country_name VARCHAR(100) NOT NULL,
+    description TEXT
+);
+
+-- Услуги
+CREATE TABLE Services (
+    service_id INT PRIMARY KEY AUTO_INCREMENT,
+    service_name VARCHAR(100) NOT NULL,
+    price DECIMAL(10,2) NOT NULL
+);
+
+-- Туры
+CREATE TABLE Tours (
+    tour_id INT PRIMARY KEY AUTO_INCREMENT,
+    tour_name VARCHAR(150) NOT NULL,
+    country_id INT NOT NULL,
+    duration_days INT,
+    base_price DECIMAL(10,2),
+    FOREIGN KEY (country_id)
+        REFERENCES Countries(country_id)
+);
+
+-- Клиенты
+CREATE TABLE Clients (
+    client_id INT PRIMARY KEY AUTO_INCREMENT,
+    full_name VARCHAR(150) NOT NULL,
+    phone VARCHAR(20),
+    email VARCHAR(100)
+);
+
+-- Связь туров и услуг
+CREATE TABLE TourServices (
+    tour_id INT,
+    service_id INT,
+    PRIMARY KEY (tour_id, service_id),
+    FOREIGN KEY (tour_id)
+        REFERENCES Tours(tour_id),
+    FOREIGN KEY (service_id)
+        REFERENCES Services(service_id)
+);
+
+-- Заказы
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
+    client_id INT NOT NULL,
+    tour_id INT NOT NULL,
+    order_date DATE NOT NULL,
+    status VARCHAR(50) DEFAULT 'Новый',
+    total_price DECIMAL(10,2),
+    FOREIGN KEY (client_id)
+        REFERENCES Clients(client_id),
+    FOREIGN KEY (tour_id)
+        REFERENCES Tours(tour_id)
+);
