@@ -1,0 +1,31 @@
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def sound(self):
+        return "Some generic sound"
+
+    def move(self):
+        return f"{self.name} moves"
+
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name)
+        self.breed = breed
+
+    def sound(self):
+        return "Woof!"
+
+    def fetch(self):
+        return f"{self.name} fetches the stick"
+
+
+if __name__ == "__main__":
+    a = Animal("Creature")
+    d = Dog("Rex", "Labrador")
+
+    print(a.sound())
+    print(d.sound())
+    print(d.move())
+    print(d.fetch())
