@@ -19,8 +19,8 @@
 
 * `sql/tourism.sql` - SQL-скрипт создания базы данных;
 * `delphi/WebModuleUnit1.pas` - исходный код WEB-приложения;
-* `docs/report.docx` - отчёт по проекту;
-* `docs/analysis.docx` - анализ WEB-систем.
+* `report.docx` - отчёт по проекту;
+* `analysis.docx` - анализ WEB-систем.
 
 ## Назначение системы
 
