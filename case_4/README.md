@@ -6,18 +6,22 @@
 
 * Delphi 10.2 WebBroker
 * Microsoft SQL Server
-* IIS
+* IIS (Internet Information Services)
 
 ## Возможности системы
 
 * просмотр списка туров;
 * получение информации о туре по идентификатору;
-* создание заказа;
+* создание заказов;
 * работа через REST API.
 
 ## Структура проекта
 
-* sql/tourism.sql - база данных;
-* delphi/WebModuleUnit1.pas - исходный код WEB-приложения;
-* docs/report.docx - отчёт по проекту;
-* docs/analysis.docx - анализ WEB-систем.
+* `sql/tourism.sql` - SQL-скрипт создания базы данных;
+* `delphi/WebModuleUnit1.pas` - исходный код WEB-приложения;
+* `docs/report.docx` - отчёт по проекту;
+* `docs/analysis.docx` - анализ WEB-систем.
+
+## Назначение системы
+
+Система предназначена для хранения информации о туристических турах, клиентах и заказах, а также для предоставления доступа к данным через WEB-интерфейс и REST API.
